@@ -17,7 +17,7 @@
   <meta property="og:description" content="Web Developer | full-stack developer | Tech Enthusiast" />
   <meta property="og:image" content="https://m-anwarulkarim.github.io/og-image.png" />
   <meta property="og:url" content="https://m-anwarulkarim.github.io/" />
-  <meta property="og:type" content="https://m-anwarulkarim.github.io/" />
+  <meta property="og:type" content="website" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -80,7 +80,20 @@
 
     h1 { font-size: 2.2rem; margin-bottom: 10px; }
     h1 strong { color: var(--primary-color); }
-    p { color: var(--subtext-color); margin-bottom: 25px; font-size: 1.1rem; }
+
+    p { color: var(--subtext-color); margin-bottom: 20px; font-size: 1.1rem; }
+
+    /* ✅ Profile Image */
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--primary-color);
+      margin: 15px auto;
+      display: block;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
 
     /* Navbar */
     nav { margin-bottom: 20px; }
@@ -106,6 +119,7 @@
       transition: background 0.3s, transform 0.3s;
     }
     .links a:hover { background: var(--primary-hover); transform: translateY(-3px); }
+
     .toggle-btn {
       margin-top: 10px;
       padding: 8px 16px;
@@ -123,8 +137,19 @@
     .section { margin-top: 40px; text-align: left; }
     .section h2 { color: var(--primary-color); margin-bottom: 15px; }
     .skills, .projects { display: flex; flex-wrap: wrap; gap: 10px; }
-    .skill, .project { background: var(--card-bg); color: var(--text-color); padding: 10px 15px; border-radius: 8px; font-size: 0.95rem; transition: background 0.3s, color 0.3s; }
-    .skill:hover, .project:hover { background: var(--primary-color); color: #fff; cursor: default; }
+    .skill, .project {
+      background: var(--card-bg);
+      color: var(--text-color);
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    .skill:hover, .project:hover {
+      background: var(--primary-color);
+      color: #fff;
+      cursor: default;
+    }
 
     /* Responsive */
     @media (max-width: 480px) {
@@ -137,6 +162,7 @@
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav>
     <a href="#skills">Skills</a>
@@ -145,6 +171,14 @@
   </nav>
 
   <div class="card">
+
+    <!-- ✅ Profile Image -->
+    <img 
+      src="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a004" 
+      alt="Anwarul Karim" 
+      class="profile-img" 
+    />
+
     <h1>👋 Hi, I’m <strong>Anwarul Karim</strong></h1>
     <p>Web Developer | Learner | Tech Enthusiast</p>
 
@@ -157,7 +191,7 @@
       <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark</button>
     </div>
 
-    <!-- Skills Section -->
+    <!-- Skills -->
     <div class="section" id="skills">
       <h2>Skills</h2>
       <div class="skills">
@@ -170,14 +204,14 @@
         <div class="skill">TypeScript</div>
         <div class="skill">Express</div>
         <div class="skill">PostgreSQL</div>
-        <div class="skill">Mongodb</div>
-        <div class="skill">Next js</div>
-        <div class="skill">docker</div>
+        <div class="skill">MongoDB</div>
+        <div class="skill">Next.js</div>
+        <div class="skill">Docker</div>
         <div class="skill">Golang</div>
       </div>
     </div>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <div class="section" id="projects">
       <h2>Projects</h2>
       <div class="projects">
@@ -187,12 +221,12 @@
       </div>
     </div>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <div class="section" id="contact">
       <h2>Contact Me</h2>
       <p>Email: <a href="mailto:dev.anwarul@gmail.com">dev.anwarul@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">Visit</a></p>
-      <p>Facebook: <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">Visit</a></p>
+      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100090871429446" target="_blank">Visit</a></p>
     </div>
   </div>
 
@@ -201,5 +235,6 @@
       document.body.classList.toggle('light');
     }
   </script>
+
 </body>
 </html>
