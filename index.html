@@ -1,127 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anwarul Karim | Portfolio</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anwarul Karim | Portfolio</title>
 
-    <!-- Google site verification -->
-    <meta name="google-site-verification" content="j6QJXhANjs2WHmMIVYV9RF6AHuj7ogjb_1UDEp-ifOA" />
+  <!-- Google site verification -->
+  <meta name="google-site-verification" content="j6QJXhANjs2WHmMIVYV9RF6AHuj7ogjb_1UDEp-ifOA" />
 
-    <!-- SEO -->
-    <meta
-      name="description"
-      content="Official portfolio of Anwarul Karim - Web Developer"
-    />
-    <meta
-      name="keywords"
-      content="Anwarul Karim, web developer, GitHub portfolio, front-end, programming"
-    />
+  <!-- SEO -->
+  <meta name="description" content="Official portfolio of Anwarul Karim - Web Developer" />
+  <meta name="keywords" content="Anwarul Karim, web developer, GitHub portfolio, front-end, programming" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Anwarul Karim | Portfolio" />
+  <meta property="og:description" content="Web Developer | Learner | Tech Enthusiast" />
+  <meta property="og:image" content="https://m-anwarulkarim.github.io/og-image.png" />
+  <meta property="og:url" content="https://m-anwarulkarim.github.io/" />
+  <meta property="og:type" content="website" />
 
-    <style>
-      /* Reset & Typography */
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anwarul Karim | Portfolio" />
+  <meta name="twitter:description" content="Web Developer | Learner | Tech Enthusiast" />
+  <meta name="twitter:image" content="https://m-anwarulkarim.github.io/og-image.png" />
 
-      body {
-        font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #0f172a, #1e293b);
-        color: #ffffff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        text-align: center;
-        padding: 20px;
-      }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-      .card {
-        background: rgba(2, 6, 23, 0.9);
-        padding: 50px 30px;
-        border-radius: 20px;
-        max-width: 500px;
-        width: 100%;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-      .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-      }
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: rgba(2,6,23,0.9);
+      --text-color: #ffffff;
+      --subtext-color: #94a3b8;
+      --primary-color: #3b82f6;
+      --primary-hover: #2563eb;
+    }
 
-      h1 {
-        font-size: 2.2rem;
-        margin-bottom: 15px;
-      }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
 
-      h1 strong {
-        color: #3b82f6; /* blue highlight */
-      }
+    body.light {
+      --bg-color: #f8fafc;
+      --card-bg: rgba(255,255,255,0.95);
+      --text-color: #0f172a;
+      --subtext-color: #475569;
+      --primary-color: #2563eb;
+      --primary-hover: #1d4ed8;
+    }
 
-      p {
-        color: #94a3b8;
-        margin-bottom: 25px;
-        font-size: 1.1rem;
-      }
+    .card {
+      background: var(--card-bg);
+      padding: 50px 30px;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+      text-align: center;
+    }
 
-      .links a {
-        display: inline-block;
-        margin: 5px;
-        padding: 12px 22px;
-        background: #3b82f6;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 10px;
-        font-weight: 600;
-        transition: background 0.3s ease, transform 0.3s ease;
-      }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
+    }
 
-      .links a:hover {
-        background: #2563eb;
-        transform: translateY(-3px);
-      }
+    h1 { font-size: 2.2rem; margin-bottom: 10px; }
+    h1 strong { color: var(--primary-color); }
+    p { color: var(--subtext-color); margin-bottom: 25px; font-size: 1.1rem; }
 
-      /* Responsive */
-      @media (max-width: 480px) {
-        .card {
-          padding: 35px 20px;
-        }
+    /* Navbar */
+    nav { margin-bottom: 20px; }
+    nav a {
+      margin: 0 10px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: var(--primary-hover); }
 
-        h1 {
-          font-size: 1.8rem;
-        }
+    /* Links & toggle */
+    .links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 12px 22px;
+      background: var(--primary-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .links a:hover { background: var(--primary-hover); transform: translateY(-3px); }
+    .toggle-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background: var(--primary-color);
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle-btn:hover { background: var(--primary-hover); }
 
-        p {
-          font-size: 1rem;
-        }
+    /* Sections */
+    .section { margin-top: 40px; text-align: left; }
+    .section h2 { color: var(--primary-color); margin-bottom: 15px; }
+    .skills, .projects { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill, .project { background: var(--card-bg); color: var(--text-color); padding: 10px 15px; border-radius: 8px; font-size: 0.95rem; transition: background 0.3s, color 0.3s; }
+    .skill:hover, .project:hover { background: var(--primary-color); color: #fff; cursor: default; }
 
-        .links a {
-          padding: 10px 18px;
-          font-size: 0.95rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>👋 Hi, I’m <strong>Anwarul Karim</strong></h1>
-      <p>Web Developer | Learner | Tech Enthusiast</p>
-      <div class="links">
-        <a href="https://github.com/m-anwarulkarim" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">LinkedIn</a>
-        <a href="https://www.facebook.com/profile.php?id=100090871429446" target="_blank">Facebook</a>
-        <a href="https://m-anwarulkarim.github.io" target="_blank">Portfolio</a>
+    /* Responsive */
+    @media (max-width: 480px) {
+      .card { padding: 35px 20px; }
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+      .links a { padding: 10px 18px; font-size: 0.95rem; }
+      .skills, .projects { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="card">
+    <h1>👋 Hi, I’m <strong>Anwarul Karim</strong></h1>
+    <p>Web Developer | Learner | Tech Enthusiast</p>
+
+    <div class="links">
+      <a href="https://github.com/m-anwarulkarim" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=100090871429446" target="_blank">Facebook</a>
+      <a href="https://m-anwarulkarim.github.io" target="_blank">Portfolio</a>
+      <a href="resume.pdf" target="_blank">Download Resume</a>
+      <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark</button>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">React</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Git</div>
       </div>
     </div>
-  </body>
+
+    <!-- Projects Section -->
+    <div class="section" id="projects">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project">Portfolio Website</div>
+        <div class="project">GitHub Projects Showcase</div>
+        <div class="project">Simple Web Apps</div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="section" id="contact">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">Visit</a></p>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('light');
+    }
+  </script>
+</body>
 </html>
