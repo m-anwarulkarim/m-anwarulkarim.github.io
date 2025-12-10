@@ -2,18 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+
+  <!-- ✅ Google site verification (শুধু একবার) -->
   <meta name="google-site-verification" content="nh-iHcbuYUqvCXFEwbzRu64CoMMSZvFjB59phjB686g" />
+
   <title>Anwarul Karim | Portfolio</title>
 
-  <!-- Google site verification -->
-  <meta name="google-site-verification" content="nh-iHcbuYUqvCXFEwbzRu64CoMMSZvFjB59phjB686g" />
   <!-- SEO -->
   <meta name="description" content="Official portfolio of Anwarul Karim - Web Developer" />
   <meta name="keywords" content="Anwarul Karim, web developer, GitHub portfolio, front-end, backend developer" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Anwarul Karim | Portfolio" />
-  <meta property="og:description" content="Web Developer | full-stack developer | Tech Enthusiast" />
+  <meta property="og:description" content="Web Developer | Full-stack Developer | Tech Enthusiast" />
   <meta property="og:image" content="https://m-anwarulkarim.github.io/og-image.png" />
   <meta property="og:url" content="https://m-anwarulkarim.github.io/" />
   <meta property="og:type" content="website" />
@@ -28,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" href="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a004" type="image/x-icon" />
+  <link rel="icon" href="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a5b?raw=true" type="image/x-icon" />
 
   <style>
     :root {
@@ -61,6 +62,22 @@
       --primary-hover: #1d4ed8;
     }
 
+    nav {
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary-hover);
+    }
+
     .card {
       background: var(--card-bg);
       padding: 50px 30px;
@@ -77,12 +94,21 @@
       box-shadow: 0 25px 50px rgba(0,0,0,0.7);
     }
 
-    h1 { font-size: 2.2rem; margin-bottom: 10px; }
-    h1 strong { color: var(--primary-color); }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
 
-    p { color: var(--subtext-color); margin-bottom: 20px; font-size: 1.1rem; }
+    h1 strong {
+      color: var(--primary-color);
+    }
 
-    /* ✅ Profile Image */
+    p {
+      color: var(--subtext-color);
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
     .profile-img {
       width: 140px;
       height: 140px;
@@ -94,18 +120,6 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    /* Navbar */
-    nav { margin-bottom: 20px; }
-    nav a {
-      margin: 0 10px;
-      color: var(--primary-color);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: var(--primary-hover); }
-
-    /* Links & toggle */
     .links a {
       display: inline-block;
       margin: 5px;
@@ -117,7 +131,11 @@
       font-weight: 600;
       transition: background 0.3s, transform 0.3s;
     }
-    .links a:hover { background: var(--primary-hover); transform: translateY(-3px); }
+
+    .links a:hover {
+      background: var(--primary-hover);
+      transform: translateY(-3px);
+    }
 
     .toggle-btn {
       margin-top: 10px;
@@ -130,12 +148,27 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    .toggle-btn:hover { background: var(--primary-hover); }
 
-    /* Sections */
-    .section { margin-top: 40px; text-align: left; }
-    .section h2 { color: var(--primary-color); margin-bottom: 15px; }
-    .skills, .projects { display: flex; flex-wrap: wrap; gap: 10px; }
+    .toggle-btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .section {
+      margin-top: 40px;
+      text-align: left;
+    }
+
+    .section h2 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .skills, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     .skill, .project {
       background: var(--card-bg);
       color: var(--text-color);
@@ -144,25 +177,40 @@
       font-size: 0.95rem;
       transition: background 0.3s, color 0.3s;
     }
+
     .skill:hover, .project:hover {
       background: var(--primary-color);
       color: #fff;
       cursor: default;
     }
 
-    /* Responsive */
     @media (max-width: 480px) {
-      .card { padding: 35px 20px; }
-      h1 { font-size: 1.8rem; }
-      p { font-size: 1rem; }
-      .links a { padding: 10px 18px; font-size: 0.95rem; }
-      .skills, .projects { flex-direction: column; }
+      .card {
+        padding: 35px 20px;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .links a {
+        padding: 10px 18px;
+        font-size: 0.95rem;
+      }
+
+      .skills, .projects {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Navbar -->
   <nav>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
@@ -170,10 +218,8 @@
   </nav>
 
   <div class="card">
-
-    <!-- ✅ Profile Image -->
     <img 
-      src="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a004" 
+      src="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a5b?raw=true" 
       alt="Anwarul Karim" 
       class="profile-img" 
     />
@@ -190,7 +236,6 @@
       <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark</button>
     </div>
 
-    <!-- Skills -->
     <div class="section" id="skills">
       <h2>Skills</h2>
       <div class="skills">
@@ -210,7 +255,6 @@
       </div>
     </div>
 
-    <!-- Projects -->
     <div class="section" id="projects">
       <h2>Projects</h2>
       <div class="projects">
@@ -220,13 +264,13 @@
       </div>
     </div>
 
-    <!-- Contact -->
     <div class="section" id="contact">
       <h2>Contact Me</h2>
       <p>Email: <a href="mailto:dev.anwarul@gmail.com">dev.anwarul@gmail.com</a></p>
       <p>LinkedIn: <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">Visit</a></p>
       <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100090871429446" target="_blank">Visit</a></p>
     </div>
+
   </div>
 
   <script>
