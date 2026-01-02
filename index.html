@@ -3,10 +3,31 @@
 <head>
   <meta charset="UTF-8" />
 
+  <!-- ✅ Basic SEO -->
+  <title>Anwarul Karim – Full Stack Web Developer | Portfolio</title>
+  <meta name="description" content="Anwarul Karim is a Full Stack Web Developer skilled in JavaScript, React, Node.js, Express, PostgreSQL, MongoDB, Prisma, Next.js, NestJS, Redis, Docker, Golang, and Git. Explore projects, skills, and contact information." />
+  <meta name="keywords" content="Anwarul Karim, Full Stack Developer, Web Developer Bangladesh, JavaScript Developer, React Developer, Node.js Developer, Portfolio Website" />
+  <meta name="author" content="Anwarul Karim" />
+  <meta name="robots" content="index, follow" />
+
   <!-- ✅ Google Site Verification -->
   <meta name="google-site-verification" content="nh-iHcbuYUqvCXFEwbzRu64CoMMSZvFjB59phjB686g" />
 
-  <title>Anwarul Karim | Portfolio</title>
+  <!-- ✅ Canonical URL -->
+  <link rel="canonical" href="https://m-anwarulkarim.github.io/" />
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="Anwarul Karim – Full Stack Web Developer" />
+  <meta property="og:description" content="Full Stack Web Developer specializing in modern web technologies. View portfolio, skills, and projects." />
+  <meta property="og:image" content="https://m-anwarulkarim.github.io/og-image.png" />
+  <meta property="og:url" content="https://m-anwarulkarim.github.io/" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Anwarul Karim – Full Stack Web Developer" />
+  <meta name="twitter:description" content="JavaScript, React, Node.js, PostgreSQL developer portfolio." />
+  <meta name="twitter:image" content="https://m-anwarulkarim.github.io/og-image.png" />
 
   <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZSMPQMYL8R"></script>
@@ -17,28 +38,30 @@
     gtag('config', 'G-ZSMPQMYL8R');
   </script>
 
-  <!-- SEO -->
-  <meta name="description" content="Official portfolio of Anwarul Karim - Web Developer" />
-  <meta name="keywords" content="Anwarul Karim, web developer, GitHub portfolio, front-end, backend developer" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Anwarul Karim | Portfolio" />
-  <meta property="og:description" content="Web Developer | Full-stack Developer | Tech Enthusiast" />
-  <meta property="og:image" content="https://m-anwarulkarim.github.io/og-image.png" />
-  <meta property="og:url" content="https://m-anwarulkarim.github.io/" />
-  <meta property="og:type" content="website" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Anwarul Karim | Portfolio" />
-  <meta name="twitter:description" content="Web Developer | Learner | Tech Enthusiast" />
-  <meta name="twitter:image" content="https://m-anwarulkarim.github.io/og-image.png" />
-
-  <!-- Google Fonts -->
+  <!-- ✅ Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Favicon -->
+  <!-- ✅ Favicon -->
   <link rel="icon" href="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a5b?raw=true" type="image/x-icon" />
+
+  <!-- ✅ Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anwarul Karim",
+    "url": "https://m-anwarulkarim.github.io/",
+    "image": "https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a5b?raw=true",
+    "jobTitle": "Full Stack Web Developer",
+    "sameAs": [
+      "https://github.com/m-anwarulkarim",
+      "https://www.linkedin.com/in/anwarul-karim-05235438b/",
+      "https://www.facebook.com/profile.php?id=100090871429446"
+    ]
+  }
+  </script>
 
   <style>
     :root {
@@ -59,7 +82,6 @@
       align-items: center;
       min-height: 100vh;
       padding: 20px;
-      transition: background 0.3s, color 0.3s;
     }
 
     body.light {
@@ -80,11 +102,6 @@
       color: var(--primary-color);
       text-decoration: none;
       font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: var(--primary-hover);
     }
 
     .card {
@@ -93,14 +110,7 @@
       border-radius: 20px;
       max-width: 700px;
       width: 100%;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-      transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
       text-align: center;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.7);
     }
 
     h1 {
@@ -108,58 +118,31 @@
       margin-bottom: 10px;
     }
 
-    h1 strong {
-      color: var(--primary-color);
-    }
-
     p {
       color: var(--subtext-color);
+      font-size: 1.05rem;
       margin-bottom: 20px;
-      font-size: 1.1rem;
     }
 
     .profile-img {
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      object-fit: cover;
       border: 3px solid var(--primary-color);
       margin: 15px auto;
-      display: block;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
-    .links a {
+    .links a, .toggle-btn {
       display: inline-block;
-      margin: 5px;
+      margin: 6px;
       padding: 12px 22px;
       background: var(--primary-color);
       color: #fff;
-      text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .links a:hover {
-      background: var(--primary-hover);
-      transform: translateY(-3px);
-    }
-
-    .toggle-btn {
-      margin-top: 10px;
-      padding: 8px 16px;
+      text-decoration: none;
       border: none;
-      border-radius: 8px;
-      background: var(--primary-color);
-      color: #fff;
-      font-weight: 600;
       cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .toggle-btn:hover {
-      background: var(--primary-hover);
     }
 
     .section {
@@ -180,40 +163,9 @@
 
     .skill, .project {
       background: var(--card-bg);
-      color: var(--text-color);
       padding: 10px 15px;
       border-radius: 8px;
       font-size: 0.95rem;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .skill:hover, .project:hover {
-      background: var(--primary-color);
-      color: #fff;
-      cursor: default;
-    }
-
-    @media (max-width: 480px) {
-      .card {
-        padding: 35px 20px;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      p {
-        font-size: 1rem;
-      }
-
-      .links a {
-        padding: 10px 18px;
-        font-size: 0.95rem;
-      }
-
-      .skills, .projects {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
@@ -226,36 +178,36 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="card">
+  <main class="card">
     <img 
-      src="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a5b?raw=true" 
-      alt="Anwarul Karim" 
-      class="profile-img" 
+      src="https://github.com/user-attachments/assets/e16159e3-7e5b-4549-b080-162787e7a5b?raw=true"
+      alt="Anwarul Karim - Full Stack Web Developer Portfolio"
+      class="profile-img"
     />
 
-    <h1>👋 Hi, I’m <strong>Anwarul Karim</strong></h1>
-    <p>Web Developer | Learner | Tech Enthusiast</p>
+    <h1>Hi, I’m <strong>Anwarul Karim</strong></h1>
+    <p>
+      Full Stack Web Developer specializing in JavaScript, React, Node.js, Express,
+      PostgreSQL, MongoDB, Prisma, Next.js, NestJS, Redis, Docker, and Golang.
+    </p>
 
     <div class="links">
       <a href="https://github.com/m-anwarulkarim" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">LinkedIn</a>
-      <a href="https://www.facebook.com/profile.php?id=100090871429446" target="_blank">Facebook</a>
-      <a href="https://m-anwarulkarim.github.io" target="_self"></a>
       <a href="https://my-protfolio-2.vercel.app/" target="_blank">Portfolio</a>
-      <a href="https://drive.google.com/file/d/11E5yg0woyB-YNJ4wcRuX6-SjurVDanyn/view?usp=sharing" target="_blank">Download Resume</a>
-      <button class="toggle-btn" onclick="toggleMode()">Toggle Light/Dark</button>
+      <a href="https://drive.google.com/file/d/11E5yg0woyB-YNJ4wcRuX6-SjurVDanyn/view" target="_blank">Resume</a>
+      <button class="toggle-btn" onclick="toggleMode()">Light / Dark</button>
     </div>
 
-    <div class="section" id="skills">
+    <section class="section" id="skills">
       <h2>Skills</h2>
       <div class="skills">
         <div class="skill">HTML</div>
         <div class="skill">CSS</div>
         <div class="skill">JavaScript</div>
+        <div class="skill">TypeScript</div>
         <div class="skill">React</div>
         <div class="skill">Node.js</div>
-        <div class="skill">Git</div>
-        <div class="skill">TypeScript</div>
         <div class="skill">Express</div>
         <div class="skill">PostgreSQL</div>
         <div class="skill">MongoDB</div>
@@ -263,25 +215,22 @@
         <div class="skill">Docker</div>
         <div class="skill">Golang</div>
       </div>
-    </div>
+    </section>
 
-    <div class="section" id="projects">
+    <section class="section" id="projects">
       <h2>Projects</h2>
       <div class="projects">
         <div class="project">Portfolio Website</div>
         <div class="project">GitHub Projects Showcase</div>
-        <div class="project">Simple Web Apps</div>
+        <div class="project">Web Applications</div>
       </div>
-    </div>
+    </section>
 
-    <div class="section" id="contact">
-      <h2>Contact Me</h2>
+    <section class="section" id="contact">
+      <h2>Contact</h2>
       <p>Email: <a href="mailto:dev.anwarul@gmail.com">dev.anwarul@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/anwarul-karim-05235438b/" target="_blank">Visit</a></p>
-      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100090871429446" target="_blank">Visit</a></p>
-    </div>
-
-  </div>
+    </section>
+  </main>
 
   <script>
     function toggleMode() {
