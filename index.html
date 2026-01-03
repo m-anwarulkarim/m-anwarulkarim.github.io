@@ -1,183 +1,434 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anwarul Karim — Full Stack Web Developer</title>
 
-  <!-- SEO -->
-  <title>Anwarul Karim — Full Stack Web Developer</title>
-  <meta name="description" content="Anwarul Karim is a Full Stack Web Developer specializing in Frontend and Backend development using JavaScript, React, Node.js, PostgreSQL, MongoDB, Prisma, Next.js, NestJS, Redis, Docker, and Golang." />
-  <meta name="keywords" content="Anwarul Karim, Full Stack Web Developer, Frontend Developer, Backend Developer, JavaScript, React, Node.js, Bangladesh" />
-  <meta name="author" content="Anwarul Karim" />
-  <meta name="robots" content="index, follow" />
+    <style>
+      :root {
+        --bg: #0b0f1a;
+        --card-bg: rgba(23, 32, 53, 0.8);
+        --text: #f1f5f9;
+        --subtext: #94a3b8;
+        --primary: #3b82f6;
+        --accent: #60a5fa;
+        --glass-border: rgba(255, 255, 255, 0.1);
+      }
+      body.light {
+        --bg: #f1f5f9;
+        --card-bg: rgba(255, 255, 255, 0.9);
+        --text: #0f172a;
+        --subtext: #475569;
+        --primary: #2563eb;
+        --glass-border: rgba(0, 0, 0, 0.1);
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        transition: 0.4s ease;
+      }
+      nav {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        padding: 12px 24px;
+        border-radius: 100px;
+        display: flex;
+        gap: 20px;
+        border: 1px solid var(--glass-border);
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      nav a:hover {
+        color: var(--primary);
+      }
+      .btn-toggle {
+        background: var(--primary);
+        border: none;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 120px 20px 60px;
+      }
+      .hero {
+        text-align: center;
+        margin-bottom: 80px;
+      }
+      .profile-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid var(--primary);
+        padding: 5px;
+        box-shadow: 0 0 20px var(--primary);
+        margin-bottom: 20px;
+      }
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        color: var(--subtext);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      section {
+        margin-bottom: 80px;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      h2::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--glass-border);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: var(--card-bg);
+        border: 1px solid var(--glass-border);
+        padding: 30px;
+        border-radius: 20px;
+        transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-10px) scale(1.03);
+        border-color: var(--primary);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .skill-tag {
+        background: var(--primary);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .social-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .social-btn {
+        text-decoration: none;
+        background: var(--card-bg);
+        color: var(--text);
+        padding: 10px 25px;
+        border-radius: 12px;
+        border: 1px solid var(--glass-border);
+        font-weight: 600;
+        transition: 0.3s;
+      }
+      .social-btn:hover {
+        background: var(--primary);
+        color: white;
+      }
+      @media (max-width: 600px) {
+        nav {
+          width: 90%;
+          justify-content: space-around;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#docs">Docs</a>
+      <a href="#live-projects">Live</a>
+      <a href="#contact">Contact</a>
+      <button class="btn-toggle" onclick="toggleMode()">Mode</button>
+    </nav>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://m-anwarulkarim.github.io/" />
+    <div class="container">
+      <!-- HERO -->
+      <header class="hero">
+        <img
+          src="https://i.ibb.co/4Rx05mF5/anwarul-karim.jpg"
+          alt="Anwarul Karim"
+          class="profile-img"
+        />
+        <h1>Anwarul Karim</h1>
+        <p>
+          Crafting high-performance
+          <span style="color: var(--primary)">Full Stack</span> solutions.
+        </p>
+      </header>
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Anwarul Karim — Full Stack Web Developer" />
-  <meta property="og:description" content="Frontend & Backend developer building scalable web applications." />
-  <meta property="og:url" content="https://m-anwarulkarim.github.io/" />
-  <meta property="og:type" content="website" />
+      <!-- SKILLS -->
+      <section id="skills">
+        <h2>Technical Expertise</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Frontend</h3>
+            <p style="margin-bottom: 15px; color: var(--subtext)">
+              Building interactive UIs.
+            </p>
+            <div class="skills-container">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Next.js</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">Tailwind</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Backend</h3>
+            <p style="margin-bottom: 15px; color: var(--subtext)">
+              Scalable systems & APIs.
+            </p>
+            <div class="skills-container">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">NestJS</span>
+              <span class="skill-tag">Golang</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+      <!-- LIVE WEBSITES -->
+      <section id="live-projects">
+        <h2>Live Websites</h2>
+        <div class="grid" id="live-container"></div>
+      </section>
 
-  <!-- Favicon (round image recommended) -->
-  <link rel="icon" href="https://i.ibb.co.com/QZwqtR6/IMG-20260103-074605.jpg" />
+      <!-- DOCS -->
+      <section id="docs">
+        <h2>Documentation / Docs</h2>
+        <div class="grid" id="docs-container"></div>
+      </section>
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Anwarul Karim",
-    "url": "https://m-anwarulkarim.github.io/",
-    "jobTitle": "Full Stack Web Developer",
-    "knowsAbout": [
-      "Frontend Development",
-      "Backend Development",
-      "Full Stack Web Development",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "PostgreSQL",
-      "MongoDB",
-      "Prisma",
-      "Next.js",
-      "NestJS",
-      "Docker",
-      "Redis"
-    ],
-    "sameAs": [
-      "https://github.com/m-anwarulkarim",
-      "https://www.linkedin.com/in/anwarul-karim-05235438b/"
-    ]
-  }
-  </script>
+      <!-- SELECTED WORKS -->
+      <section id="projects">
+        <h2>Selected Works</h2>
+        <div class="grid" id="github-projects"></div>
+        <div style="text-align: center; margin-top: 20px">
+          <button id="load-more" class="btn-toggle">Load More</button>
+        </div>
+      </section>
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0f172a;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      padding: 30px;
-    }
-    main {
-      max-width: 800px;
-      width: 100%;
-      background: #020617;
-      padding: 50px 35px;
-      border-radius: 20px;
-      text-align: center;
-    }
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid #3b82f6;
-      object-fit: cover;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.3rem;
-      margin-bottom: 10px;
-    }
-    p {
-      color: #94a3b8;
-      font-size: 1.05rem;
-    }
-    section {
-      margin-top: 45px;
-      text-align: left;
-    }
-    h2 {
-      color: #3b82f6;
-      margin-bottom: 15px;
-    }
-    h3 {
-      margin-top: 20px;
-    }
-    .tag {
-      display: inline-block;
-      margin: 6px;
-      padding: 8px 14px;
-      background: #020617;
-      border-radius: 8px;
-      font-size: 0.9rem;
-    }
-    nav a {
-      margin: 0 10px;
-      color: #3b82f6;
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
-</head>
+      <!-- CONTACT -->
+      <section id="contact">
+        <h2>Let's Connect</h2>
+        <div class="card" style="text-align: center">
+          <p>Have a project in mind? Shoot me an email!</p>
+          <h3 style="margin: 15px 0; color: var(--primary)">
+            dev.anwarul@gmail.com
+          </h3>
+          <div class="social-links" style="justify-content: center">
+            <a
+              href="https://github.com/m-anwarulkarim"
+              target="_blank"
+              class="social-btn"
+              >GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/anwarul-karim-05235438b/"
+              target="_blank"
+              class="social-btn"
+              >LinkedIn</a
+            >
+            <a
+              href="https://www.facebook.com/profile.php?id=100090871429446"
+              target="_blank"
+              class="social-btn"
+              >Facebook</a
+            >
+            <a
+              href="https://my-protfolio-2.vercel.app/"
+              target="_blank"
+              class="social-btn"
+              >Portfolio</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
 
-<body>
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle("light");
+      }
 
-<main>
-  <nav>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
+      // -------------------
+      // Scroll reveal for all cards
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      });
+      document.querySelectorAll(".card").forEach((card) => {
+        card.style.opacity = 0;
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "0.6s ease-out";
+        observer.observe(card);
+      });
 
-  <!-- HERO -->
-  <img
-    src="https://i.ibb.co.com/4Rx05mF5/anwarul-karim.jpg"
-    alt="Anwarul Karim Full Stack Web Developer"
-    class="profile-img"
-  />
+      // -------------------
+      // Selected Works - Load More
+      const projectsContainer = document.getElementById("github-projects");
+      const loadMoreBtn = document.getElementById("load-more");
+      let allRepos = [],
+        displayedCount = 0,
+        pageSize = 10;
+      fetch(
+        `https://api.github.com/users/m-anwarulkarim/repos?sort=updated&per_page=100`
+      )
+        .then((res) => res.json())
+        .then((repos) => {
+          allRepos = repos;
+          showNextBatch();
+        })
+        .catch((err) => {
+          projectsContainer.innerHTML = `<p style="color: var(--subtext)">Unable to fetch projects.</p>`;
+        });
 
-  <h1>Anwarul Karim — Full Stack Web Developer</h1>
+      function showNextBatch() {
+        const nextRepos = allRepos.slice(
+          displayedCount,
+          displayedCount + pageSize
+        );
+        nextRepos.forEach((repo) => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `<h3>${repo.name}</h3>
+      <p style="color: var(--subtext); margin-bottom: 10px">${
+        repo.description || "No description"
+      }</p>
+      <p style="font-size: 0.85rem; color: var(--accent)">★ ${
+        repo.stargazers_count
+      } | ${repo.language || "N/A"}</p>
+      <a href="${
+        repo.html_url
+      }" target="_blank" class="social-btn" style="margin-top:10px;display:inline-block;">View on GitHub</a>`;
+          projectsContainer.appendChild(card);
+          // scroll reveal
+          card.style.opacity = 0;
+          card.style.transform = "translateY(30px)";
+          card.style.transition = "0.6s ease-out";
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          });
+          obs.observe(card);
+        });
+        displayedCount += nextRepos.length;
+        if (displayedCount >= allRepos.length)
+          loadMoreBtn.style.display = "none";
+      }
+      loadMoreBtn.addEventListener("click", showNextBatch);
 
-  <p>
-    Frontend & Backend developer specializing in modern JavaScript technologies,
-    building scalable and high-performance web applications.
-  </p>
+      // -------------------
+      // Docs Section
+      const docsRepos = [
+        "Prisma-Pro-Next.js-P-M-05-",
+        "PostgreSQL-docs",
+        "TypeScript-P-M-02",
+        "Node.js--Express.js-P-M-03",
+      ];
+      const docsContainer = document.getElementById("docs-container");
+      fetch(
+        `https://api.github.com/users/m-anwarulkarim/repos?sort=updated&per_page=100`
+      )
+        .then((res) => res.json())
+        .then((repos) => {
+          docsRepos.forEach((name) => {
+            const repo = repos.find(
+              (r) => r.name.toLowerCase() === name.toLowerCase()
+            );
+            if (repo) {
+              const card = document.createElement("div");
+              card.classList.add("card");
+              card.innerHTML = `<h3>${repo.name}</h3>
+        <p style="color: var(--subtext); margin-bottom: 10px">${
+          repo.description || "No description"
+        }</p>
+        <p style="font-size:0.85rem;color:var(--accent)">★ ${
+          repo.stargazers_count
+        } | ${repo.language || "N/A"}</p>
+        <a href="${
+          repo.html_url
+        }" target="_blank" class="social-btn" style="margin-top:10px;display:inline-block;">View on GitHub</a>`;
+              docsContainer.appendChild(card);
+            }
+          });
+        })
+        .catch((err) => {
+          docsContainer.innerHTML = `<p style="color: var(--subtext)">Unable to fetch docs.</p>`;
+        });
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Technical Skills</h2>
-
-    <h3>Frontend Development</h3>
-    <p>React, Next.js, TypeScript, JavaScript, HTML5, CSS3, Tailwind CSS</p>
-
-    <h3>Backend Development</h3>
-    <p>Node.js, Express.js, NestJS, PostgreSQL, MongoDB, Prisma, Redis</p>
-
-    <h3>DevOps & Tools</h3>
-    <p>Docker, Git, GitHub, Linux, REST APIs</p>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <h3>Full Stack Portfolio Website</h3>
-    <p>
-      SEO-optimized responsive portfolio built using modern frontend and backend
-      technologies.
-    </p>
-
-    <h3>Backend API System</h3>
-    <p>
-      Scalable REST API with authentication, role-based access control,
-      and database optimization.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:dev.anwarul@gmail.com">dev.anwarul@gmail.com</a></p>
-  </section>
-</main>
-
-</body>
+      // -------------------
+      // Live Websites
+      const liveProjects = [
+        { name: "Portfolio", url: "https://my-protfolio-2.vercel.app/" },
+        {
+          name: "Vehicle Rental Management System",
+          url: "https://vehicle-rental-ystem.vercel.app/",
+        },
+        {
+          name: "Darul ihsan madrasha ",
+          url: "https://darul-ihsan.vercel.app/",
+        },
+      ];
+      const liveContainer = document.getElementById("live-container");
+      liveProjects.forEach((p) => {
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.innerHTML = `<h3>${p.name}</h3>
+    <a href="${p.url}" target="_blank" class="social-btn" style="margin-top:10px;display:inline-block;">View Live</a>`;
+        liveContainer.appendChild(card);
+      });
+    </script>
+  </body>
 </html>
